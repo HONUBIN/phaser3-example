@@ -11,13 +11,8 @@
     "target": "es5",
     "allowJs": true,
     "baseUrl": ".",
+    "strictNullChecks": false
   },
-  "include": [
-    "./index.d.ts",
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "./dist/"
-  ]
+  "include": ["./index.d.ts", "**/*.ts"],
+  "exclude": ["node_modules", "./dist/"]
 }

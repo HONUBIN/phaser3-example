@@ -10,8 +10,8 @@ export class Level1 extends Scene {
   private player!: Player;
   private map!: Tilemaps.Tilemap;
   private tileset!: Tilemaps.Tileset;
-  private wallsLayer!: Tilemaps.DynamicTilemapLayer;
-  private groundLayer!: Tilemaps.DynamicTilemapLayer;
+  private wallsLayer!: Tilemaps.TilemapLayer;
+  private groundLayer!: Tilemaps.TilemapLayer;
   private chests!: GameObjects.Sprite[];
   private enemies!: Enemy[];
 
@@ -36,8 +36,8 @@ export class Level1 extends Scene {
   private initMap(): void {
     this.map = this.make.tilemap({ key: 'dungeon', tileWidth: 16, tileHeight: 16 });
     this.tileset = this.map.addTilesetImage('dungeon', 'tiles');
-    this.groundLayer = this.map.createDynamicLayer('Ground', this.tileset, 0, 0);
-    this.wallsLayer = this.map.createDynamicLayer('Walls', this.tileset, 0, 0);
+    this.groundLayer = this.map.createLayer('Ground', this.tileset, 0, 0);
+    this.wallsLayer = this.map.createLayer('Walls', this.tileset, 0, 0);
     this.wallsLayer.setCollisionByProperty({ collides: true });
 
     this.physics.world.setBounds(0, 0, this.wallsLayer.width, this.wallsLayer.height);
