@@ -21,9 +21,9 @@ export class Level1 extends Scene {
 
   create(): void {
     this.initMap();
-    this.player = new Player(this, 200, 200);
+    this.player = new Player(this, 48, 48);
     this.initChests();
-    this.initEnemies();
+    // this.initEnemies();
     this.initCamera();
 
     this.physics.add.collider(this.player, this.wallsLayer);
