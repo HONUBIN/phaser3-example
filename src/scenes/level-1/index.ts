@@ -21,7 +21,7 @@ export class Level1 extends Scene {
 
   create(): void {
     this.initMap();
-    this.player = new Player(this, 100, 100);
+    this.player = new Player(this, 200, 200);
     this.initChests();
     this.initEnemies();
     this.initCamera();
@@ -57,7 +57,7 @@ export class Level1 extends Scene {
       this.physics.add.overlap(this.player, chest, (obj1, obj2) => {
         this.game.events.emit(EVENTS_NAME.chestLoot);
         obj2.destroy();
-        // this.cameras.main.flash();
+        this.cameras.main.flash();
       });
     });
   }
